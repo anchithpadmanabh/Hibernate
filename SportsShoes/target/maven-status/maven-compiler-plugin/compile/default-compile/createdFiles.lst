@@ -1,0 +1,16 @@
+com\niit\Model\Supplier.class
+com\niit\DAOImpl\ProductDaoImpl.class
+com\niit\Model\UserRole.class
+com\niit\DAO\ProductDAO.class
+com\niit\DAOImpl\SupplierDaoImpl.class
+com\niit\DAO\SupplierDAO.class
+com\niit\controller\UserRegistrationController.class
+com\niit\Model\Category.class
+com\niit\DAOImpl\UserDetailsDAOImpl.class
+com\niit\Model\Product.class
+com\niit\Model\UserDetails.class
+com\niit\Model\Users.class
+com\niit\DAO\CategoryDAO.class
+com\niit\DAOImpl\CategoryDaoImpl.class
+com\niit\DAO\UserDetailsDAO.class
+com\niit\controller\PageController.class
