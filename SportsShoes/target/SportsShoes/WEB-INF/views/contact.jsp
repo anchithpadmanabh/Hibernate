@@ -34,13 +34,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h2>Contact</h2>
 				<div class="col-md-6 map">
 					<h3>Our Location</h3>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37494223.23909492!2d103!3d55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x453c569a896724fb%3A0x1409fdf86611f613!2sRussia!5e0!3m2!1sen!2sin!4v1415776049771"></iframe>
+					<iframe src="https://www.google.co.in/maps/place/National+Institute+of+Information+Technology/@12.9341761,77.5806723,17z/data=!3m1!4b1!4m5!3m4!1s0x110573c532f007d1:0x87ab32aadbdff8fc!8m2!3d12.9341761!4d77.582861?hl=en"></iframe>
 					<div class="address">
 					<h4>Address</h4>
-						<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas </p>
+						<!-- <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas </p> -->
 					<ul class="social ">
-						<li><span>#27/AS, 1st Cross, 2nd Phase, 3rd Stage, Banashankari 3rd Stage, Bangalore - 560085 </span></li>
-						<li><span>+ 919740603344</span></li>
+						<li><span>No.74/2,1st Floor, Sanjana Plaza, Elephant Rock Road, Jayanagar 3rd Block, Jayanagara, Bengaluru, Karnataka 560011 </span></li>
+						<li><span>080 4115 2634</span></li>
 						<li><a href="mailto:anchith.padmanabh@gmail.com">anchith.padmanabh@gmail.com</a></li>
 					</ul>
 

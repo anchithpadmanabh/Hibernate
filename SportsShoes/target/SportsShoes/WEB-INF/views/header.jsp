@@ -1,23 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-</head>
+
+ </head>
 <body>
 <div class="line">
 	
 	</div>
 	<div class="header"> 
-		<div class="logo">
+		<!-- <div class="logo">
 			<a href="index"><img src="resource/images/logo.png" alt="" ></a>
-		</div>
-		<div  class="header-top"> 
+		</div> --> 
+		<div class="header-top"> 
 			<div class="header-grid">
 				<ul class="header-in">
-						<li ><a href="account">My Account   </a> </li>
+					<c:choose>
+						<c:when test="${pageContext.request.userPrincipal.name != null}">							
+							<i class="fa fa-user-admin"></i>
+							<li><a>Hello, ${pageContext.request.userPrincipal.name}</a></li>
+							<li><a href="<c:url value="/j_spring_security_logout"/>">
+							<i class="fa fa-sign-out"></i>Sign Out</a></li>
+						</c:when>						
+					</c:choose>
+					<li ><a href="index">Home   	 </a> </li>
+					<li ><a href="loginPage">Login   </a> </li>
+					<li ><a href="register">Register </a> </li>
+					<li ><a href="contact">Contact   </a> </li>
+					<br>
+					<br>
+					<br>
+					<br>
+					<c:choose>
+						<c:when test="${pageContext.request.userPrincipal.name != null}">
+							<c:if test="${pageContext.request.userPrincipal.name == 'Admin'}">
+								<li><a class="color2" href="<c:url value="/suppliers"/>">SUPPLIER</a></li>	
+								<li><a class="color2"  href="<c:url value='/categories'/>">CATEGORY</a></li>
+								<li><a class="color2" href="<c:url value="/products"/>">PRODUCT</a></li>
+							</c:if>
+							<c:if test="${pageContext.request.userPrincipal.name != 'Admin'}">
+								<li><a class="color2" href="<c:url value="/user/cart"/>">CART</a></li>
+							</c:if>
+						</c:when>
+					</c:choose>
+						
 						<!-- 
 						<li>	
 							<select class="in-drop">
@@ -28,6 +58,74 @@
 						</li>	
 						-->				
 				</ul>
+	<%-- 			<div> <!-- *** MENU BAR***-->
+				<hr color="red" size="5">
+  
+				<!-- <ul id="menu"> -->
+				<ul>
+					<div class="container">
+       				<div class="row">
+					<c:forEach items="${categoryList}" var="category">		
+						<li><a href="${category.name}">${category.name}</a>
+							<ul>
+								<select class="drop">
+								<c:forEach items="${category.products}" var="product">
+									<li><option class="in-of">
+										<a href="<c:url value='product/get/${product.id}' />">${product.name}</a>
+									</option></li>					
+								</c:forEach>
+								</select>
+							</ul>
+						</li>
+					</c:forEach>
+					</div>
+					</div>
+				</ul>
+				<hr color="red" size="5">
+			</div>   --%>	
+			
+			<div class=" h_menu4">
+						<!-- <ul class="memenu skyblue"> -->
+						<ul>
+							<c:forEach items="${categoryList}" var="category">
+
+								<li class="grid"><a class="color2" href="${category.name}">${category.name}</a>
+
+
+
+									<div class="mepanel">
+										<div class="row">
+											<div class="col1">
+												<div class="h_nav">
+													<ul>
+														<c:forEach items="${category.products}" var="product">
+															<br>
+
+															<li class="grid"><a class="color2"
+																href="<c:url value='product/get/${product.id}' />">${product.name}</a></li>
+														</c:forEach>
+													</ul>
+							</c:forEach>
+					</div>
+			
+	
+		
+			<%-- <div class="home-carousel">
+
+				<div class="dark-mask"></div>
+
+					<div class="container">
+			
+					<!-- COUROSEL STARTING -->
+						<div class="homepage owl-carousel">				
+					
+						<%@include file="/WEB-INF/views/code.jsp" %>
+					
+						</div>
+					</div>
+			</div>
+ --%>				
+				
 				  <!-- Search Box
 					<div class="search-box">
 					    <div id="sb-search" class="sb-search">
@@ -97,8 +195,7 @@
 					
 			<div class="clearfix"> </div>
 			-->
-		</div>
-		
+			</div>
 		</div>
 		<div class="clearfix"> </div>
 	</div>

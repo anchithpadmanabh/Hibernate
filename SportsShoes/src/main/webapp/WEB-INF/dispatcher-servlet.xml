@@ -1,42 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:security="http://www.springframework.org/schema/security"
- 	
 	xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/context/spring-context.xsd 
         http://www.springframework.org/schema/security
-        http://www.springframework.org/schema/security/spring-security.xsd">
-                
-	<context:component-scan base-package="com.niit" />
-		
+         http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<context:component-scan base-package="com.niit.*" />
+
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	 	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/> 
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
 
-	<mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" />
- 	<mvc:annotation-driven/>
-	<mvc:default-servlet-handler/>
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+    <mvc:default-servlet-handler/>
+	<mvc:annotation-driven />
 	
-	<!-- <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="1024000" />
     </bean>
-	 -->
 	
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.h2.Driver" />
-		<property name="url" value="jdbc:h2:tcp://localhost/~/new" />
+		<property name="url" value="jdbc:h2:tcp://localhost/~/SportsShoes" />
 		<property name="username" value="sa" />
 		<property name="password" value="" />
 	</bean>
@@ -59,12 +55,12 @@
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
-	</bean> 
+	</bean>
 	
-	<!-- 
 	<security:http auto-config="true">
 		<security:intercept-url pattern="/admin/**"
 			access="ROLE_ADMIN" />
+		
 		<security:intercept-url pattern="/categories/**"
 			access="ROLE_ADMIN"  />
 		<security:intercept-url pattern="/category/**"
@@ -99,12 +95,11 @@
 				users-by-username-query="SELECT username, password, enabled FROM users WHERE username = ?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
--->
+
 	<mvc:annotation-driven>
-	 
         <mvc:argument-resolvers>
             <bean class="org.springframework.security.web.bind.support.AuthenticationPrincipalArgumentResolver" />
         </mvc:argument-resolvers>
     </mvc:annotation-driven>
- 
+		
 </beans>

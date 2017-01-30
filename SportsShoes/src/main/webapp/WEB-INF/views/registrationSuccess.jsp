@@ -47,7 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 
-<h3 align="center">You are successfully registered</h3>
+<h3 align="center">You have successfully registered</h3>
 
 		<br>
 		<br>

@@ -37,9 +37,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	</div>
 	</div>
 	<!---->
-	<div class="content">
+	<!-- <div class="content">
 	<div class="sport-your">
-	<!-- requried-jsfiles-for owl -->
+	requried-jsfiles-for owl
 		<link href="resource/css/owl.carousel.css" rel="stylesheet">
 		<script src="resource/js/owl.carousel.js"></script>
 		<script>
@@ -54,9 +54,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		      });
 		    });
 		</script>
-		<!-- //requried-jsfiles-for owl -->
+		//requried-jsfiles-for owl
 
-		<!-- start content_slider -->
+		start content_slider
 		<div class="line1">
 	
 		</div>
@@ -168,7 +168,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	
 		</div>
 	</div>
-	<!--//sreen-gallery-cursual---->
+	//sreen-gallery-cursual--
 	<div class="content-grids">
 	
 	<div class="col-md-4 content-grid">
@@ -206,7 +206,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	
 	<div class="clearfix"> </div>
 	</div>
-	<!---->
+	
 	<div class="content-top">
 		<div class="col-md-4 top-content">
 			<a href="single"><img class="img-responsive " src="resource/images/pi.jpg" alt=""></a>
@@ -301,7 +301,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<div class="clearfix"> </div>
 	</div>
 </div>	
-<!--footer-->
+ -->
+ <!--footer-->
 <%@include file = "footer.jsp" %>
 </body>
 </html>

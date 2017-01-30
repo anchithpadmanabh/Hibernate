@@ -33,7 +33,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 	width:15%;
 	margin:0 auto;
 	float: left;
-	min-height: 120px;
+	min-height: 245px; 
 	text-align: center;
 	padding-top: 14px;
 }
@@ -48,12 +48,12 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 .header-top{
 	float:left;
-	width:85%;
+	width:100%;
 	background:#2f2f2f;
 }
 .header-in {
 	float: left;
-	width: 90%;
+	width: 100%;
 	text-align:right;
 	padding: 1em 5em 0 0;
 }
@@ -1814,5 +1814,40 @@ a.elit {
 }
 a.create {
   width: 61%;
+}
+.h_menu4 {
+  margin: 7px 0 0px;
+  float: right;
+}
+.memenu>li>a {
+    padding: 8px 10px;
+}
+.h_nav h4{
+	border-bottom:1px solid rgb(236, 236, 236);
+	font-size: 1.3em;
+	color:#000;
+	line-height: 1.8em;
+	margin-bottom: 4%;
+}
+.h_nav h4.top{
+	margin-top:1%;
+}
+.h_nav ul li{
+	display: block;
+}
+.h_nav ul li a{
+	display: block;
+  font-size: 0.85em;
+  color: #8A8686;
+  text-transform: capitalize;
+  line-height: 3em;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.h_nav ul li a:hover{
+	color:#000;
+	text-decoration:underline;
 }
 }

@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<br>
+<br>
 <div class="footer">
 		<!--  <div class="col-md-3 footer-left">
 			<h4>Sports</h4>
@@ -48,7 +50,7 @@
 			</div>
 		</div>
 		-->
-		<div class="col-md-2 footer-left left-footer">
+		<div class="col-md-6 footer-left left-footer">
 			<h4>Your Account</h4>
 				<ul class="run-grid-in">
 					<li><a href="account">Login</a></li>
@@ -57,7 +59,7 @@
 					-->
 				</ul>
 		</div>
-		<div class="col-md-4 footer-left left-footer">
+		<div class="col-md-6 footer-left left-footer">
 			<ul class="social-in">
 				<li><a href="#"><i> </i></a></li>
 				<li><a href="#"><i class="youtube"> </i></a></li>
@@ -70,6 +72,9 @@
 				<h6>NRL: five things we learned this weekend</h6>
 				<p>In support of suburban games; Warriors rip</p>
 				-->
+				<br>
+				<br>
+				
 				<a href="register" class="sign">SIGN UP AND GET MORE</a>
 				<p class="footer-class"> © 2015 Sports Store All Rights Reserved | Template by  Anchith 
 				<!-- <a href="http://w3layouts.com/" target="_blank">W3layouts</a> -->

@@ -9,61 +9,68 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.niit.DAO.UserDetailsDAO;
-import com.niit.Model.UserDetails;
+import com.niit.DAO.UsersDetailDao;
+import com.niit.Model.UsersDetail;
 
 import java.util.List;
 
 import javax.validation.Valid;
 
- 
+/*
+ * This Controller is used to register user into the system
+ */
 @Controller
 public class UserRegistrationController {
 
 	@Autowired
-	private UserDetailsDAO userDetailsDAO;
-
+	private UsersDetailDao usersDetailDAO;
+	
 	@RequestMapping("/register")
 	public String registerUser(Model model) {
 
-		UserDetails userDetails = new UserDetails();
-		model.addAttribute("userDetails", userDetails);
+		UsersDetail usersDetail = new UsersDetail();
+		model.addAttribute("usersDetail", usersDetail);
 		return "register";
 	}
 	
-	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public ModelAndView registerUserPost(@Valid @ModelAttribute("userDetails") UserDetails userDetails,
+	public ModelAndView registerUserPost(@Valid @ModelAttribute("usersDetail") UsersDetail usersDetail,
 			BindingResult result) {
 		
 		if (result.hasErrors()) {					
-			ModelAndView model=new ModelAndView("register");
+			ModelAndView model=new ModelAndView("customerRegister");
 			model.addObject("message", "You have entered invalid details");
 			
 			System.out.println("Page has errors");
 			return model;
 		}
 		
-		List<UserDetails> userDetailsList = userDetailsDAO.getAllUsers();
+		List<UsersDetail> usersDetailList = usersDetailDAO.getAllUsers();
 
-        for (int i=0; i< userDetailsList.size(); i++) {
-        	ModelAndView model=new ModelAndView("register");
-        	if(userDetails.getUserEmail().equals(userDetailsList.get(i).getUserEmail())) {
+        for (int i=0; i< usersDetailList.size(); i++) {
+        	ModelAndView model=new ModelAndView("customerRegister");
+        	if(usersDetail.getUserEmail().equals(usersDetailList.get(i).getUserEmail())) {
                 model.addObject("emailError", "Email already exists");
+
                 return model;
             }
 
-            if(userDetails.getUsername().equals(userDetailsList.get(i).getUsername())) {
+            if(usersDetail.getUsername().equals(usersDetailList.get(i).getUsername())) {
                 model.addObject("usernameError", "Username already exists");
                 return model;
             }
-            if(userDetails.getUserPhone().equals(userDetailsList.get(i).getUserPhone())) {
+            if(usersDetail.getUserPhone().equals(usersDetailList.get(i).getUserPhone())) {
                 model.addObject("userPhoneError", "User phone already exists");
                 return model;
             }
         }
-		//userDetails.setEnabled(true);
-		userDetailsDAO.addUser(userDetails);
+		/*if(usersDetailDAO.isValidUser(usersDetail.getUsername())==false){
+			ModelAndView model=new ModelAndView("customerRegister");
+			model.addObject("usernameError", "User name already exists");
+			return model;
+		}*/
+		usersDetail.setEnabled(true);
+		usersDetailDAO.addUser(usersDetail);
 		ModelAndView model=new ModelAndView("registrationSuccess");
 		return model;
 	}
